@@ -30,7 +30,7 @@ export default function App() {
         <input type="checkbox" name="all" id="all"/>
         All
       </label>
-      <p>you have 0 to do</p>
+      <p>You have 0 to do</p>
     <button id="delete">Delete</button>
       </div>
 
