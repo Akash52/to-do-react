@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <h1>To Do List</h1>
+      <form autoComplete="off">
+        <input type="text" name="todos" id="todos" required placeholder="What you do today !?"/>
+      <button type="submit">Create</button>
+      </form>
+      <ul>
+        <li>
+          <label htmlFor="">
+            <input type="checkbox" id=""/>
+            Cooking to do
+          </label>
+          <button>Edit</button>
+        </li>
+        <li>
+          <label htmlFor="">
+            <input type="checkbox" id=""/>
+            Study 2 hour
+          </label>
+          <button>Edit</button>
+        </li>
+      </ul>
 
-export default App;
+      <div className="row">
+      <label htmlFor="all">
+        <input type="checkbox" name="all" id="all"/>
+        All
+      </label>
+      <p>you have 0 to do</p>
+    <button id="delete">Delete</button>
+      </div>
+
+    </div>
+  )
+}
