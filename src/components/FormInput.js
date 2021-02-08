@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { DataContext } from './DataProvider'
 
 export default function FormInput() {
-    return (
-<form autoComplete="off">
-        <input type="text" name="todos" id="todos" required placeholder="What you do today !?"/>
+  const [todos, setTodos] = useContext(DataContext)
+  const [todoName, setTodoName] = useState('')
+
+  const addTodo = (e) => {
+    e.preventDefault()
+    setTodos([...todos, { name: todoName, complete: false }])
+    setTodoName('')
+  }
+
+  return (
+    <form autoComplete="off" onSubmit={addTodo}>
+      <input
+        type="text"
+        name="todos"
+        id="todos"
+        required
+        placeholder="What you do today !?"
+        value={todoName}
+        onChange={(e) => setTodoName(e.target.value.toLowerCase())}
+      />
       <button type="submit">Create</button>
-      </form>
-    )
+    </form>
+  )
 }
