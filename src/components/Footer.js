@@ -34,12 +34,15 @@ export default function Footer() {
               type="checkbox"
               name="all"
               id="all"
-              onClick={handleCheckAll}
+              onChange={handleCheckAll}
               checked={checkAll}
             />
             All
           </label>
-          <p>You have {todos.length} to do</p>
+          <p>
+            You have {todos.filter((todo) => todo.complete === false).length} to
+            do
+          </p>
           <button id="delete" onClick={deleteTodo}>
             Delete
           </button>
