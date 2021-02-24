@@ -51,6 +51,7 @@ form button {
   color: white;
   letter-spacing: 2px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 ul li {
@@ -81,7 +82,14 @@ ul li button,
   background: #dfdf2a;
   padding: 5px 15px;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+button:focus {
+  outline: none;
 }
 
 ul li button:disabled {
